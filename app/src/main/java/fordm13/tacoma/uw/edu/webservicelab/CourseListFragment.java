@@ -43,6 +43,7 @@ public class CourseListFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
 
+    //what php/SQL query to run
     private static final String COURSE_URL =
             "http://cssgate.insttech.washington.edu/~fordm13/Android/test.php?cmd=courses";
 
