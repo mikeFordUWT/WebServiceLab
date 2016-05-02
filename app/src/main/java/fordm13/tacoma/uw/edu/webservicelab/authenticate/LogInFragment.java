@@ -59,7 +59,7 @@ public class LogInFragment extends Fragment {
                 }
                 //Ensure a password length
                 if(pwd.length() < 6){
-                    Toast.makeText(v.getContext(), "Enter a passwork of at least 6 characters"
+                    Toast.makeText(v.getContext(), "Enter a password of at least 6 characters"
                         , Toast.LENGTH_SHORT)
                             .show();
                     pwdText.requestFocus();
