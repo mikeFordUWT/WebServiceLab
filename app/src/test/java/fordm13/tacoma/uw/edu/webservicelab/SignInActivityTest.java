@@ -6,9 +6,7 @@ import com.robotium.solo.Solo;
 
 import fordm13.tacoma.uw.edu.webservicelab.authenticate.SignInActivity;
 
-/**
- * Created by Mike on 5/5/16.
- */
+
 public class SignInActivityTest extends
         ActivityInstrumentationTestCase2<SignInActivity>{
 
@@ -37,6 +35,7 @@ public class SignInActivityTest extends
         boolean fragmentLoaded = solo.searchText("Enter your userid");
         assertTrue("Login fragment loaded", fragmentLoaded);
     }
+
 
     public void testSignInWorks() {
         solo.enterText(0, "fordm13@uw.edu");

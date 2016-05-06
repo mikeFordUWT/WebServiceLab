@@ -7,9 +7,7 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by Mike on 4/19/16.
- */
+
 public class Course implements Serializable {
     public String mCourseId;
     public String mShortDescription;
@@ -30,8 +28,11 @@ public class Course implements Serializable {
         return mCourseId;
     }
 
-    public void setCourseId(String courseId) {
-        if(courseId!= null && courseId.length() >=5){
+    public void setCourseId(String courseId) throws IllegalArgumentException{
+        if(courseId== null || courseId.length() <5){
+            throw new IllegalArgumentException("courseId must be >= 5 long");
+
+        }else{
             this.mCourseId = courseId;
         }
 
