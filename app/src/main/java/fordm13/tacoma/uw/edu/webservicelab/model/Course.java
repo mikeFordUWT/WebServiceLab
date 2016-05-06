@@ -31,7 +31,10 @@ public class Course implements Serializable {
     }
 
     public void setCourseId(String courseId) {
-        this.mCourseId = courseId;
+        if(courseId!= null && courseId.length() >=5){
+            this.mCourseId = courseId;
+        }
+
     }
 
     public String getShortDescription() {
