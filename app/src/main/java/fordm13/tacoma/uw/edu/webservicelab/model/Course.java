@@ -29,9 +29,11 @@ public class Course implements Serializable {
     }
 
     public void setCourseId(String courseId) throws IllegalArgumentException{
-        if(courseId== null || courseId.length() <5){
+        if(courseId.length() <5){
             throw new IllegalArgumentException("courseId must be >= 5 long");
 
+        }else if(courseId== null ){
+            throw new IllegalArgumentException("You must enter a courseID");
         }else{
             this.mCourseId = courseId;
         }
