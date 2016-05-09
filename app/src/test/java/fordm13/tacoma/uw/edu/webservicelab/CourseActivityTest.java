@@ -11,6 +11,8 @@ import java.util.Random;
  */
 public class CourseActivityTest extends
         ActivityInstrumentationTestCase2<CourseActivity>{
+
+
     private Solo solo;
 
     public CourseActivityTest() {
@@ -45,6 +47,7 @@ public class CourseActivityTest extends
         solo.goBack();
         boolean foundCourseList = solo.searchText("Course List");
         assertTrue("Back to List works!", foundCourseList);
+
     }
 
     //test that a CourseAddFragment loads
@@ -59,6 +62,11 @@ public class CourseActivityTest extends
         solo.clickOnView(getActivity().findViewById(R.id.action_logout));
         boolean textFound = solo.searchText("Enter your userid");
         assertTrue("Login fragment loaded", textFound);
+        solo.enterText(0, "userid@");
+        solo.enterText(1, "somepassword");
+        solo.clickOnButton("Sign In");
+        boolean worked = solo.searchText("Course List");
+        assertTrue("Sign in worked!", worked);
     }
 
     //Tests if a course can be added
