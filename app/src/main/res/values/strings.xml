@@ -7,9 +7,9 @@
     <string name="course_prereqs_hint">Enter prereqs</string>
     <string name="add_course_text">Add Course</string>
 
-    <string name="hint_sign_in">Enter your email</string>
+    <string name="hint_sign_in">Enter your userid</string>
     <string name="hint_password">Enter your password</string>
-    <string name="sign_in_button">SIGN IN</string>
+    <string name="sign_in_button">Sign In</string>
     <string name="LOGIN_PREFS">fordm13.tacoma.uw.edu.webservicelab.PREFS</string>
     <string name="LOGGEDIN">loggedin</string>
     <string name="action_logout">LOG OUT</string>

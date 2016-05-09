@@ -32,6 +32,7 @@ public class SignInActivityTest extends
     }
 
     public void testSignInFragmentLoads() {
+        solo = new Solo(getInstrumentation(), getActivity());
         boolean fragmentLoaded = solo.searchText("Enter your userid");
         assertTrue("Login fragment loaded", fragmentLoaded);
     }

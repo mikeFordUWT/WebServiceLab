@@ -6,12 +6,8 @@ import com.robotium.solo.Solo;
 
 import java.util.Random;
 
-/**
- * Created by Mike on 5/5/16.
- */
 public class CourseActivityTest extends
-        ActivityInstrumentationTestCase2<CourseActivity>{
-
+        ActivityInstrumentationTestCase2<CourseActivity> {
 
     private Solo solo;
 
@@ -29,35 +25,32 @@ public class CourseActivityTest extends
     public void tearDown() throws Exception {
         //tearDown() is run after a test case has finished.
         //finishOpenedActivities() will finish all the activities that have been opened during the test execution.
-        solo.finishOpenedActivities();
 
+        solo.finishOpenedActivities();
     }
 
-    //Tests to see if a CourseListFragment loads
+
     public void testCourseList() {
-        boolean fragmentLoaded = solo.searchText("Course List");
+        boolean fragmentLoaded = solo.searchText("TCSS");
         assertTrue("Course List fragment loaded", fragmentLoaded);
     }
 
-    //Test that a CourseDetailFragment loads
+
     public void testCourseDetail() {
         solo.clickInRecyclerView(0);
         boolean foundCourseDetail = solo.searchText("TCSS450");
         assertTrue("Course Detail fragment loaded", foundCourseDetail);
         solo.goBack();
-        boolean foundCourseList = solo.searchText("Course List");
+        boolean foundCourseList = solo.searchText("TCSS");
         assertTrue("Back to List works!", foundCourseList);
-
     }
 
-    //test that a CourseAddFragment loads
     public void testAddWorks() {
         solo.clickOnView(getActivity().findViewById(R.id.fab));
-        boolean textFound = solo.searchText("Add a Course");
+        boolean textFound = solo.searchText("Enter Course Id");
         assertTrue("Add a course fragment loaded", textFound);
     }
 
-    //Tests that the logout loads a LogIn Fragment
     public void testLogout() {
         solo.clickOnView(getActivity().findViewById(R.id.action_logout));
         boolean textFound = solo.searchText("Enter your userid");
@@ -65,11 +58,11 @@ public class CourseActivityTest extends
         solo.enterText(0, "userid@");
         solo.enterText(1, "somepassword");
         solo.clickOnButton("Sign In");
-        boolean worked = solo.searchText("Course List");
+        boolean worked = solo.searchText("TCSS");
         assertTrue("Sign in worked!", worked);
+
     }
 
-    //Tests if a course can be added
     public void testCourseAddButton() {
         solo.clickOnView(getActivity().findViewById(R.id.fab));
         Random random = new Random();
@@ -84,6 +77,5 @@ public class CourseActivityTest extends
         boolean textFound = solo.searchText(courseNumber);
         assertTrue("Course add failed", textFound);
     }
-
 
 }
